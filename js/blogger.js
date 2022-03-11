@@ -22,10 +22,10 @@ function loadcontents(page=1){
     read=document.getElementById("read");
     try{
         passagelist.classList.remove("hidden");
-    }catch{}
+    }catch(e){}
     try{
         read.classList.add("hidden");
-    }catch{}
+    }catch(e){}
     pageinfo=document.getElementById("pageInfo");
     pageinfo.innerHTML="广场";
     curPage=page;
@@ -112,10 +112,10 @@ function loadpassage(id){
     read=document.getElementById("read");
     try{
         read.classList.remove("hidden");
-    }catch{}
+    }catch(e){}
     try{
         passagelist.classList.add("hidden");
-    }catch{}
+    }catch(e){}
     read.innerHTML="<div class=\"loading\">加载中</div>";
     blocked=1;
     getRemoteAssets("https://www.tmysam.top/blogger/apis/getPassage.php?id="+id.toString(),loadpassageStage2);
