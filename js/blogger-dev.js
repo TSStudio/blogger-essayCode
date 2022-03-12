@@ -104,7 +104,7 @@ function loadcontentsStage2(){
     state={};
     state.name="contents";
     state.page=curPage;
-    history.replaceState(state,"","https://www.tmysam.top/");
+    history.replaceState(state,"","https://www.tmysam.top/index-dev.html");
     blocked=0;
 }
 function loadpassage(id){
@@ -146,7 +146,7 @@ function loadpassageStage2(){
     state={};
     state.name="passage";
     state.id=curId;
-    history.replaceState(state,"","https://www.tmysam.top/?tid="+curId.toString());
+    history.replaceState(state,"","https://www.tmysam.top/index-dev.html?tid="+curId.toString());
     blocked=0;
 }
 function getQueryVariable(variable){

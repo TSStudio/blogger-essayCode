@@ -7,7 +7,6 @@
 // title -> title
 
 $req=json_decode(file_get_contents('php://input'),true);
-print_r($req);
 // RESPONSE blank
 session_start();
 if(isset($req['captcha'])){
