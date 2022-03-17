@@ -31,14 +31,15 @@ $count=$row["COUNT(*)"];
 
 $articles=array();
 if($from==-1){
-    $result=$con->query("SELECT title,editedTime,id FROM `blogger-articles` ORDER BY editedTime DESC,id DESC LIMIT ".(string)$limit);
+    $result=$con->query("SELECT title,createdTime,editedTime,id FROM `blogger-articles` ORDER BY createdTime DESC,id DESC LIMIT ".(string)$limit);
 }else{
-    $result=$con->query("SELECT title,editedTime,id FROM `blogger-articles` ORDER BY editedTime DESC,id DESC LIMIT ".(string)$limit." OFFSET ".(string)$from);
+    $result=$con->query("SELECT title,createdTime,editedTime,id FROM `blogger-articles` ORDER BY createdTime DESC,id DESC LIMIT ".(string)$limit." OFFSET ".(string)$from);
 }
 while($row=$result->fetch_array()){
     $rowcontent=array();
     $rowcontent["title"]=$row["title"];
     $rowcontent["lastedit"]=(int)$row["editedTime"];
+    $rowcontent["create"]=(int)$row["createdTime"];
     $rowcontent["id"]=(int)$row["id"];
     $articles[]=$rowcontent;
 }
