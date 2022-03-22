@@ -15,7 +15,6 @@
     -moz-osx-font-smoothing: grayscale;
 }
 .topInfo{
-    margin:200px auto 30px auto;
     text-align: center;
     font-size:3em;
     font-family: '思源黑体 CN','思源黑体','黑体',sans-serif;
@@ -25,10 +24,25 @@ body{
     margin:0;
     background-color: rgb(190, 192, 155);
 }
-#content{
-    width:60%;
-    background-color: rgb(255, 255, 238);
-    margin:0 auto 70px auto;
+@media screen and (max-width:600px){
+    .topInfo{
+        margin:0 auto 30px auto;
+    }
+    #content{
+        width:100%;
+        background-color: rgb(255, 255, 238);
+        margin:0 auto 70px auto;
+    }
+}
+@media screen and (min-width:600px){
+    .topInfo{
+        margin:200px auto 30px auto;
+    }
+    #content{
+        width:60%;
+        background-color: rgb(255, 255, 238);
+        margin:0 auto 70px auto;
+    }
 }
 #pageInfo{
     margin:0 auto 30px auto;
@@ -80,9 +94,13 @@ body{
 }
 #read{
     margin-bottom: 70px;
-    padding: 6px;
+    padding: 10px;
 }
 .pageselector{
     margin:auto;
     text-align: center;
+}
+.katex-display{
+    overflow-x: auto;
+    overflow-y: hidden;
 }
