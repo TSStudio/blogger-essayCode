@@ -47,18 +47,22 @@ function loadpassageStage2(){
         return;
     }
     read=document.getElementById("read");
-    read.innerHTML=parse(JSON.parse(response)["content"]);
-    if(existFunction("renderMathInElement")){
-        renderMathInElement(read,{
-        delimiters: [
-            {left: '$$', right: '$$', display: true},
-            {left: '$', right: '$', display: false}
-        ],
-        throwOnError : false
-        });
-    }
-    if(existFunction("hljs.highlightAll")){
-        hljs.highlightAll();
+    try{
+        read.innerHTML=parse(JSON.parse(response)["content"]);
+        if(existFunction("renderMathInElement")){
+            renderMathInElement(read,{
+            delimiters: [
+                {left: '$$', right: '$$', display: true},
+                {left: '$', right: '$', display: false}
+            ],
+            throwOnError : false
+            });
+        }
+        if(existFunction("hljs.highlightAll")){
+            hljs.highlightAll();
+        }
+    }catch(e){
+        read.innerHTML="<h1>错误：</h1>"+e;
     }
     topInfo=document.getElementById("topInfo");
     topInfo.innerHTML="BLOGGER TID "+curId.toString();

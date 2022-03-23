@@ -170,6 +170,9 @@ function refreshEssay(){
         throwOnError : false
         });
     }
+    if(existFunction("hljs.highlightAll")){
+        hljs.highlightAll();
+    }
     readbox.style.height=read.offsetHeight+'px';
 }
 function loadpassageStage2(){
@@ -208,4 +211,5 @@ function submit(){
     xhr.open("POST","https://www.tmysam.top/blogger/apis/postEssay.php",true);
     xhr.setRequestHeader('content-type','application/json');
     xhr.send(jsonreq);
+    document.getElementById('captcha_img').src='./captcha.php?r='+Math.random();
 }

@@ -16,6 +16,7 @@ if(isset($req['captcha'])){
 }else{
     exit("no captcha");
 }
+$_SESSION['authcode']="";
 $salt="likjmhnubygvt";
 $hashed="3b11e91019d8eff6beee9d12172e776c55106b544a54974326d8344904cf4f97";
 $processed=hash("sha256",hash("sha256",$req['password']).$salt);
