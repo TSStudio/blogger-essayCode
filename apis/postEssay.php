@@ -11,12 +11,13 @@ $req=json_decode(file_get_contents('php://input'),true);
 session_start();
 if(isset($req['captcha'])){
     if(strtolower($req['captcha'])!=$_SESSION['authcode']){
+        $_SESSION['authcode']=rand(1,100000);
         exit("captcha wrong");
     }
 }else{
     exit("no captcha");
 }
-$_SESSION['authcode']="";
+$_SESSION['authcode']=rand(1,100000);
 $salt="likjmhnubygvt";
 $hashed="3b11e91019d8eff6beee9d12172e776c55106b544a54974326d8344904cf4f97";
 $processed=hash("sha256",hash("sha256",$req['password']).$salt);
