@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <!--Send AJAX request to apis/decodeEssay.php and displays reponse text.-->
+    <body>
+        <meta charset="utf-8">
+        <textarea id="data"></textarea>
+        <button id="decode">Decode</button>
+    </body>
+    <script>
+        //Send AJAX request to apis/decodeEssay.php and displays reponse text.
+        document.getElementById("decode").addEventListener("click", function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "apis/decodeEssay.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById("data").value = xhr.responseText;
+                }
+            }
+            xhr.send("data=" + document.getElementById("data").value);
+        });
+    </script>
+</html>

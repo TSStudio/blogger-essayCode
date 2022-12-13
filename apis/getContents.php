@@ -25,15 +25,15 @@ if(isset($_GET["limit"])){
 $from=(int)($_GET["from"]);
 include("db.php");
 $con=new mysqli("127.0.0.1",$un,$pw,"apps");
-$result=$con->query("SELECT COUNT(*) FROM `blogger-articles`");
+$result=$con->query("SELECT COUNT(*) FROM `blogger-articles` WHERE hidden=0");
 $row=$result->fetch_array();
 $count=$row["COUNT(*)"];
 
 $articles=array();
 if($from==-1){
-    $result=$con->query("SELECT title,createdTime,editedTime,id FROM `blogger-articles` ORDER BY createdTime DESC,id DESC LIMIT ".(string)$limit);
+    $result=$con->query("SELECT title,createdTime,editedTime,id FROM `blogger-articles` WHERE hidden=0 ORDER BY createdTime DESC,id DESC LIMIT ".(string)$limit);
 }else{
-    $result=$con->query("SELECT title,createdTime,editedTime,id FROM `blogger-articles` ORDER BY createdTime DESC,id DESC LIMIT ".(string)$limit." OFFSET ".(string)$from);
+    $result=$con->query("SELECT title,createdTime,editedTime,id FROM `blogger-articles` WHERE hidden=0 ORDER BY createdTime DESC,id DESC LIMIT ".(string)$limit." OFFSET ".(string)$from);
 }
 while($row=$result->fetch_array()){
     $rowcontent=array();

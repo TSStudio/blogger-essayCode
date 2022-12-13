@@ -72,16 +72,25 @@ function loadcontentsStage2(){
     totalpages=Math.ceil(contents["total"]/10);
     str="<div class=\"pageselector\">";
     if(curPage>1){
-        str=str+"<a href=\"#\" onclick=\"swpg("+(curPage-1).toString()+")\" class=\"back\">上一页</a>";
+        str=str+"<a onclick=\"swpg("+(curPage-1).toString()+")\" class=\"back\">上一页</a>";
     }
     str=str+"第 <input id=\"pageno\" type=\"text\" style=\"width:20px\" onchange=\"swpg()\" value=\""+(curPage.toString())+"\"> 页，共 "+(totalpages.toString())+" 页";
     if(curPage<totalpages){
-        str=str+"<a href=\"#\" onclick=\"swpg("+(curPage+1).toString()+")\" class=\"back\">下一页</a>";
+        str=str+"<a onclick=\"swpg("+(curPage+1).toString()+")\" class=\"back\">下一页</a>";
     }
     str=str+"</div>";
     for(i=0;i<contents["articles"].length;i++){
         str=str+"<div class=\"passagebutton\" onclick=\"loadpassage("+(contents["articles"][i]["id"].toString())+")\"><p class=\"datetime\">"+datetimeparser(contents["articles"][i]["lastedit"])+"</p><p class=\"titlebutton\">"+contents["articles"][i]["title"]+"</p></div>";
     }
+    str=str+"<div class=\"pageselector\">";
+    if(curPage>1){
+        str=str+"<a onclick=\"swpg("+(curPage-1).toString()+")\" class=\"back\">上一页</a>";
+    }
+    str=str+"第 <input id=\"pageno\" type=\"text\" style=\"width:20px\" onchange=\"swpg()\" value=\""+(curPage.toString())+"\"> 页，共 "+(totalpages.toString())+" 页";
+    if(curPage<totalpages){
+        str=str+"<a onclick=\"swpg("+(curPage+1).toString()+")\" class=\"back\">下一页</a>";
+    }
+    str=str+"</div>";
     passagelist.innerHTML=str;
 }
 window.onload=function(){

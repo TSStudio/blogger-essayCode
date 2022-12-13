@@ -1,11 +1,20 @@
 var response;
 var curId=0;
+defaultfontstyle[5]="-apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif";
 function getRemoteAssets(url,func){
     xhttp=new XMLHttpRequest();
     xhttp.onreadystatechange=function(){
         if(this.readyState==4&&this.status==200){
             response=this.responseText;
             func();
+        }
+        if(this.readyState==2){
+            read=document.getElementById("read");
+            read.innerHTML="<div class=\"loading\">请求已发送</div>";
+        }
+        if(this.readyState==3){
+            read=document.getElementById("read");
+            read.innerHTML="<div class=\"loading\">请求响应完成，正在下载内容</div>";
         }
     };
     xhttp.open("GET",url,true);
@@ -48,6 +57,11 @@ function loadpassageStage2(){
     }
     read=document.getElementById("read");
     try{
+        //if prefers color scheme dark
+        if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+            defaultfontstyle[2]="#FFFFFF";
+        }
+        document.title=JSON.parse(response)["title"]+" - BLOGGER";
         read.innerHTML=parse(JSON.parse(response)["content"]);
         if(existFunction("renderMathInElement")){
             renderMathInElement(read,{
@@ -64,6 +78,10 @@ function loadpassageStage2(){
     }catch(e){
         read.innerHTML="<h1>错误：</h1>"+e;
     }
+    essayCodeButton=document.getElementById("essayCodeButton");
+    ECJSPButton=document.getElementById("ECJSPButton");
+    essayCodeButton.innerHTML="EssayCode "+essayCodeVersion;
+    ECJSPButton.innerHTML="ECJsParser "+essayCodeParserVersion;
     topInfo=document.getElementById("topInfo");
     topInfo.innerHTML="BLOGGER TID "+curId.toString();
 }
@@ -76,10 +94,14 @@ function getQueryVariable(variable){
     }
     return(false);
 }
+function downloadEssay(){
+    window.location.href="https://www.tmysam.top/apis/downloadEssay.php?id="+curId.toString();
+}
 window.onload=function(){
     if(getQueryVariable("tid")){
         if(!isNaN(parseInt(getQueryVariable("tid")))){
             loadpassage(parseInt(getQueryVariable("tid")));
+
         }else{
         }
     }else{
