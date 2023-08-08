@@ -1,148 +1,186 @@
 @font-face {
-    font-family: 'iconfont';  /* Project id 3232227 */
-    src: url('//at.alicdn.com/t/c/font_3232227_ars2a2ef9fr.woff2?t=1669604263763') format('woff2'),
-         url('//at.alicdn.com/t/c/font_3232227_ars2a2ef9fr.woff?t=1669604263763') format('woff'),
-         url('//at.alicdn.com/t/c/font_3232227_ars2a2ef9fr.ttf?t=1669604263763') format('truetype');
+    font-family: "iconfont"; /* Project id 3232227 */
+    src: url("//at.alicdn.com/t/c/font_3232227_ars2a2ef9fr.woff2?t=1669604263763")
+            format("woff2"),
+        url("//at.alicdn.com/t/c/font_3232227_ars2a2ef9fr.woff?t=1669604263763")
+            format("woff"),
+        url("//at.alicdn.com/t/c/font_3232227_ars2a2ef9fr.ttf?t=1669604263763")
+            format("truetype");
 }
-.iconfont{
-    font-family:"iconfont" !important;
-    font-size:32px;font-style:normal;
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 32px;
+    font-style: normal;
     -webkit-font-smoothing: antialiased;
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
 }
-.topInfo{
+.topInfo {
     text-align: center;
-    font-size:3em;
-    font-family: '思源黑体 CN','思源黑体','黑体',sans-serif;
+    font-size: 3em;
+    font-family: "思源黑体 CN", "思源黑体", "黑体", sans-serif;
     font-weight: lighter;
 }
-#caution{
+#caution {
     font-size: 1em;
-    font-family: '思源黑体 CN','思源黑体','黑体',sans-serif;
+    font-family: "思源黑体 CN", "思源黑体", "黑体", sans-serif;
     font-weight: lighter;
-    color: #FFFFFF;
-    background-color: #EE8888;
+    color: #ffffff;
+    background-color: #ee8888;
     border-radius: 5px;
-    margin:10px 20px 0 20px;
-    padding:10px;
+    margin: 10px 20px 0 20px;
+    padding: 10px;
 }
-body{
-    margin:0;
-    background-color: rgb(190, 192, 155);
+body {
+    margin: 0;
+    background-color: #e5e7eb;
 }
-@media screen and (max-width:600px){
-    #content{
-        width:100%;
-        margin:0 auto 30px auto;
+@media screen and (max-width: 600px) {
+    #content {
+        width: 100%;
+        margin: 0 auto 30px auto;
     }
 }
-@media screen and (min-width:600px){
-    #content{
-        width:60%;
-        margin:0 auto 70px auto;
-        margin:200px auto 30px auto;
+@media screen and (min-width: 600px) {
+    #content {
+        width: 60%;
+        margin: 0 auto 70px auto;
+        margin: 10px auto 30px auto;
     }
 }
-#content{
-    transition: all 250ms ease-in-out;
-    background-color: rgb(255, 255, 238);
-}
-#pageInfo{
-    margin:0 auto 30px auto;
+input#pageno {
+    border: none;
+    font-size: 1em;
+    background-color: #ececec;
     text-align: center;
-    font-size:2em;
-    font-family: '思源黑体 CN','思源黑体','黑体',sans-serif;
+    box-sizing: border-box;
+}
+#content {
+    transition: all 250ms ease-in-out;
+    background-color: #fff;
+    border-radius: 20px;
+}
+#pageInfo,
+.division {
+    margin: 0 auto 20px auto;
+    text-align: center;
+    font-size: 2em;
+    font-family: "思源黑体 CN", "思源黑体", "黑体", sans-serif;
     font-weight: lighter;
 }
-.hidden{
-    display:none;
+.cnt-txt {
+    padding: 5px;
 }
-.loading{
+.hidden {
+    display: none;
+}
+.loading {
     text-align: center;
 }
-.passagebutton{
+.passagebutton {
     box-sizing: border-box;
     cursor: pointer;
     width: 100%;
-    border-top: 2px solid #CCCCCC;
+    border-top: 2px solid #cccccc;
     padding: 5px;
 }
-.titlebutton{
-    font-family: '思源黑体 CN','思源黑体','黑体',sans-serif;
+.titlebutton {
+    font-family: "思源黑体 CN", "思源黑体", "黑体", sans-serif;
     font-weight: lighter;
+    font-size: 1.5em;
+    margin: 0;
 }
-.datetime{
-    color:#CC9900;
+.datetime {
+    color: #cc9900;
+    font-size: 0.5em;
 }
-.back{
-    cursor:pointer;
+.back {
+    cursor: pointer;
     text-decoration: none;
-    color:black;
+    color: black;
     background-color: rgb(223, 223, 205);
 }
-.back:hover{
+.back:hover {
     background-color: rgb(184, 184, 165);
 }
-#beian{
+#beian {
     background-color: #222222;
-    position: fixed;
-    bottom:0;
-    height:30px;
-    width:100%;
+    bottom: 0;
+    height: 30px;
+    width: 100%;
     text-align: center;
 }
-.beiana{
-    color:#AAAAAA;
+.beiana {
+    color: #fff;
     text-decoration: none;
     text-align: center;
-    display:inline;
+    display: inline;
 }
-#read{
+#read {
     margin-bottom: 0px;
     padding: 10px;
 }
-.pageselector{
-    margin:auto;
+.pageselector {
+    margin: auto;
     text-align: center;
 }
-.katex-display{
+.katex-display {
     overflow-x: auto;
     overflow-y: hidden;
 }
-.actionbar{
-    margin:0;
-    border-top:solid 1px #CCCCCC;
-    padding:10px;
+.actionbar {
+    margin: 0;
+    border-top: solid 1px #cccccc;
+    padding: 10px;
 }
-.action-button{
-    padding:10px 20px 10px 20px;
-    border-radius:8px;
-    background-color: rgb(214, 214, 158);
-    border:1px solid #CCCCCC;
+.action-button {
+    padding: 10px 20px 10px 20px;
+    border-radius: 8px;
+    background-color: #00af5c;
+    border: none;
+    color: #fff;
     cursor: pointer;
     text-decoration: none;
-    transition:all 0.2s;
+    transition: all 0.2s;
     display: inline-block;
-    color:black;
-    font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, PingFang SC,
+        Microsoft YaHei, Source Han Sans SC, Noto Sans CJK SC,
+        WenQuanYi Micro Hei, sans-serif;
 }
-.action-button:hover{
-    background-color: rgb(168, 168, 138);
+.action-button:hover {
+    background-color: #009c4e;
 }
-@media(prefers-color-scheme: dark){
-    body{
+@media (prefers-color-scheme: dark) {
+    body {
         background-color: rgb(10, 10, 40);
-        color:white;
+        color: white;
     }
-    #content{
+    #content {
         background-color: rgb(40, 40, 40);
     }
-    .action-button{
+    .action-button {
         color: white;
         background-color: rgb(80, 80, 60);
     }
-    .action-button:hover{
+    .action-button:hover {
         background-color: rgb(122, 122, 97);
     }
+}
+#function-selector {
+    padding: 10px;
+    font-size: 0;
+    cursor: default;
+}
+.page {
+    font-size: 16px;
+    display: inline-block;
+    padding: 20px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+.page:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.page-selected {
+    color: #009c4e;
 }

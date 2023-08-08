@@ -12,7 +12,7 @@ session_start();
 if(isset($req['captcha'])){
     if(strtolower($req['captcha'])!=$_SESSION['authcode']){
         $_SESSION['authcode']=rand(1,100000);
-        exit("captcha wrong");
+        exit("captcha wrong, should be".$_SESSION['authcode']." but is ".$req['captcha']);
     }
 }else{
     exit("no captcha");
