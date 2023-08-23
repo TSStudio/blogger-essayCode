@@ -123,8 +123,8 @@ function downloadEssay() {
 }
 window.onload = function () {
     if (getQueryVariable("tid")) {
-        if (!isNaN(parseInt(getQueryVariable("tid")))) {
-            loadpassage(parseInt(getQueryVariable("tid")));
+        if (!isNaN(parseInt(getQueryVariable("tid"), 10))) {
+            loadpassage(parseInt(getQueryVariable("tid"), 10));
         } else {
         }
     } else {

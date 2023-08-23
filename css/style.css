@@ -1,15 +1,22 @@
 @font-face {
     font-family: "iconfont"; /* Project id 3232227 */
-    src: url("//at.alicdn.com/t/c/font_3232227_ars2a2ef9fr.woff2?t=1669604263763")
+    src: url("https://at.alicdn.com/t/c/font_3232227_jbq0h73l12b.woff2?t=1692081101961")
             format("woff2"),
-        url("//at.alicdn.com/t/c/font_3232227_ars2a2ef9fr.woff?t=1669604263763")
+        url("https://at.alicdn.com/t/c/font_3232227_jbq0h73l12b.woff?t=1692081101961")
             format("woff"),
-        url("//at.alicdn.com/t/c/font_3232227_ars2a2ef9fr.ttf?t=1669604263763")
+        url("https://at.alicdn.com/t/c/font_3232227_jbq0h73l12b.ttf?t=1692081101961")
             format("truetype");
 }
 .iconfont {
     font-family: "iconfont" !important;
     font-size: 32px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+.iconfont-small {
+    font-family: "iconfont" !important;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -webkit-text-stroke-width: 0.2px;
@@ -183,4 +190,60 @@ input#pageno {
 }
 .page-selected {
     color: #009c4e;
+}
+.loader {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+    border: 4px solid transparent;
+    position: relative;
+    padding: 1px;
+}
+.loader:before {
+    content: "";
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+}
+.loader .loaderBar {
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    right: 100%;
+    bottom: 0;
+    left: 0;
+    background: #aaa;
+    width: 0;
+    animation: borealisBar 2s linear infinite;
+}
+@keyframes borealisBar {
+    0% {
+        left: 0%;
+        right: 100%;
+        width: 0%;
+    }
+    10% {
+        left: 0%;
+        right: 75%;
+        width: 25%;
+    }
+    90% {
+        right: 0%;
+        left: 75%;
+        width: 25%;
+    }
+    100% {
+        left: 100%;
+        right: 0%;
+        width: 0%;
+    }
+}
+#error-holder {
+    background-color: #ee8888;
+    color: #662211;
+    overflow-x: auto;
 }

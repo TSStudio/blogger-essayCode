@@ -10,11 +10,31 @@ function getRemoteAssets(url, func) {
             response = this.responseText;
             func();
         }
+        if (this.readyState == 4 && this.status != 200) {
+            errorHandler(
+                "Failed to load remote assets 无法加载以下资源: " + url
+            );
+        }
     };
     xhttp.open("GET", url, true);
     xhttp.send();
 }
-
+window.addEventListener("error", (e) => {
+    errorHandler(e.error, e.filename, e.lineno);
+});
+function errorHandler(errormsg, file = null, line = null) {
+    let box = document.getElementById("error-holder");
+    if (box) {
+        box.innerText = box.innerText + "\n" + errormsg;
+        if (file != null) {
+            box.innerText = box.innerText + "\n" + file;
+        }
+        if (line != null) {
+            box.innerText = box.innerText + " :" + line;
+        }
+        box.innerText = box.innerText + "\n\n";
+    }
+}
 function loadcontents(page = 1) {
     curPage = page;
     if (page == 1) {
@@ -144,6 +164,7 @@ function loadcontentsStage2() {
     str = str + "</div>";
     passagelist.innerHTML = str;
 }
+
 window.onload = function () {
     loadcontents();
 };
