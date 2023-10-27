@@ -4,4 +4,4 @@ Blogger is a simple and efficient blog system designed to help users create and 
 
 ## Archive Notice
 
-This repository is now archived as it has been replaced by improved [BloggerNG](TSStudio/BloggerNG). BloggerNG offers enhanced features, improved performance, and a more streamlined development experience with vue.js workflow.
+This repository is now archived as it has been replaced by improved [BloggerNG](https://github.com/TSStudio/bloggerNG). BloggerNG offers enhanced features, improved performance, and a more streamlined development experience with vue.js workflow.
