@@ -98,8 +98,9 @@ input#pageno {
     margin: 0;
 }
 .datetime {
+    margin: 0.2em 0;
     color: #cc9900;
-    font-size: 0.5em;
+    font-size: 0.7em;
 }
 .back {
     cursor: pointer;
